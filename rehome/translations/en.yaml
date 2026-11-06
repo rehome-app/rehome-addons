@@ -1,0 +1,10 @@
+configuration:
+  license_key:
+    name: License key
+    description: The key from your purchase page (RH-XXXX-XXXX-XXXX-XXXX). Without one, Rehome shows the sample home.
+  direct_access:
+    name: Direct access
+    description: Lets an iPad's Home Screen icon open Rehome on its own port. Also set the port under Network.
+  pairing_code:
+    name: Pairing code
+    description: 6 to 12 digits an iPad types once to pair over direct access.

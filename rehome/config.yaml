@@ -1,0 +1,29 @@
+name: Rehome
+version: "0.4.0"
+slug: rehome
+url: "https://github.com/rehome-app/rehome-addons"
+description: The Rehome wall dashboard for iPads that are too old for the app (iOS 5 and later), in Safari.
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+init: false
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:tablet-dashboard
+panel_title: Rehome
+homeassistant_api: true
+ports:
+  8099/tcp: null
+ports_description:
+  8099/tcp: Direct access for an iPad's Home Screen (off unless you set a port and turn on direct access)
+options:
+  license_key: ""
+  direct_access: false
+  pairing_code: ""
+schema:
+  license_key: password?
+  direct_access: bool
+  pairing_code: match(^([0-9]{6,12})?$)
+image: "ghcr.io/rehome-app/rehome"
