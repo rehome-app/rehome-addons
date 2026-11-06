@@ -6,14 +6,28 @@ back to the first iPad.
 
 ## Install
 
-1. In Home Assistant, open **Settings → Add-ons → Add-on Store**, tap **⋮ → Repositories**, and add:
-   `https://github.com/rehome-app/rehome-addons`
-2. Find **Rehome** in the store, then press **Install** and **Start**.
-3. Open Rehome. It starts with a sample home.
-4. To show your own home, paste your license key into the add-on's **Configuration** tab (`license_key`), press
-   **Save**, then **Restart**.
+Rehome runs inside your Home Assistant. You install it once from your phone or computer, then open it on the iPad.
 
-You need Home Assistant OS or a Supervised install (the kind with an Add-ons page).
+**1. Add it to Home Assistant** (phone or computer)
+
+[![Add Rehome to your Home Assistant.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Frehome-app%2Frehome-addons)
+
+Press the button, then **Add**. Or in Home Assistant open **Settings → Add-ons → Add-on Store → ⋮ → Repositories** and
+paste `https://github.com/rehome-app/rehome-addons`.
+
+Then find **Rehome** in the Add-on Store, press **Install**, then **Start**, and turn on **Show in sidebar**.
+It opens with a sample home.
+
+**2. Add your key**
+
+In the add-on's **Configuration** tab, paste your license key into `license_key`, press **Save**, then **Restart**.
+Your own home replaces the sample home.
+
+**3. Open it on the iPad**
+
+On the iPad, open Home Assistant in Safari, sign in, and tap **Rehome** in the sidebar.
+
+You need Home Assistant OS or a Supervised install (the kind with an Add-ons page), on a 64-bit machine.
 
 ## License
 
