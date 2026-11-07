@@ -26,19 +26,20 @@ It is a Home Assistant add-on. You install it in your own Home Assistant, and th
 Nothing about your home goes to the internet. The only outside connection is the weekly license check (see Privacy).
 
 
-**Home Assistant without add-ons** (Container or Core, for example on a Raspberry Pi)? Run Rehome's own server beside it, as described in docs/STANDALONE.md in Rehome's files.
+**Settings → Apps shows no App Store** (Home Assistant Container or Core, for example on a Raspberry Pi)? Run Rehome's own server beside it, as described in docs/STANDALONE.md in Rehome's files.
 
 ## What you need
-- Home Assistant OS or Supervised (the kind with an **Add-ons** page, under Settings), on a 64-bit machine (ARM or Intel/AMD).
+- Home Assistant OS or Supervised (the kind where **Settings → Apps** opens an App Store, called **Add-ons** on older Home Assistant), on a
+  64-bit machine (ARM or Intel/AMD).
 - An iPad on the same network as Home Assistant.
 
 ## Install
-1. In Home Assistant open **Settings → Add-ons → Add-on Store**, then **⋮ → Repositories**, and add the Rehome repository:
+1. In Home Assistant open **Settings → Apps → App Store** (on older Home Assistant: **Settings → Add-ons → Add-on Store**), then **⋮ → Repositories**, and add the Rehome repository:
    `https://github.com/rehome-app/rehome-addons`
 2. Find **Rehome** in the store, open it and press **Install**.
 3. Turn on **Show in sidebar** (so Rehome has its own entry in Home Assistant's menu), then press **Start**.
 4. Add your key, either way: in Rehome, swipe up, tap **Settings → Rehome License**, paste the key from your purchase email and
-   tap **Save Key**; or open the add-on's **Configuration** tab, paste it into **License key**, **Save**, then **Restart**.
+   tap **Save Key**; or open **Settings → Apps → Rehome → Configuration** (Add-ons on older Home Assistant), paste it into **License key**, **Save**, then **Restart**.
 
 Without a key, or until the key has been checked once (this needs an internet connection), Rehome shows its sample home with
 one quiet line at the bottom saying why. Once the key is good it switches to your home by itself within a minute.
@@ -67,7 +68,7 @@ iPad 1, 2, 3 and 4. Home Assistant's own pages need Safari 15.4 or later, so its
 runs fine there through direct access.
 
 Only paired devices can open the direct port, and the add-on refuses after eight wrong tries in five minutes. To remove every
-paired device, set a new **pairing_code** in the add-on's Configuration (any 6 to 12 digits; it also works as a fixed code)
+paired device, set a new **pairing_code** in Rehome's Configuration, under Settings → Apps (Add-ons on older Home Assistant): any 6 to 12 digits, which also works as a fixed code,
 and restart the add-on. To turn direct access off, switch off **direct_access**.
 
 ## Using it

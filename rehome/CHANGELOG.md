@@ -7,6 +7,24 @@
 - License page, old iPads (iOS 5–10): tapping Save Key right after pasting, while the key box still had focus, showed nothing:
   no "Saving…" and no red line for a wrong key, until the box lost focus. Save, Paste and Remove now let go of the box first.
 - Standalone: the Docker health check follows `REHOME_PORT`, so a changed port no longer shows "unhealthy".
+- Standalone: Settings → Use on Another iPad now has **Put Rehome on This iPad's Home Screen** (every guide points at it). It
+  puts a setup code in this address and shows where Safari's Share button is.
+- The sample home's "Demo…" line shows only over the faces and the Home Screen. It no longer covers the welcome's Continue
+  (on a phone), a page's buttons, or Settings.
+- A narrow tile (a phone) toggles from its top 55 %. Before, its wrapped name made a tap in the middle open the page.
+- A real home's Home Modular Plus now has the sample home's look with the home's own things. Before, a home with twenty lights
+  got a wall of bulb tiles. Now the top row is the thermostat or clock, the clock or weather, and the photo ("Add Photo Here"
+  until there is one). Below are weather and Up Next or the Home tile, the camera or the two biggest rooms as one tile each,
+  two scenes, and about six lights and devices: the ones that are on, locks and doors, then one per room. The rest stay in
+  the Home app.
+- Tile glyphs no longer rise to the top edge when a name in the row takes two lines.
+- The Home app's scenes and unlit tiles were black on real iPads, because Safari can't blend through the page's scroll area.
+  They are now plain see-through glass in every browser.
+- An area Home Assistant named "Living Room (2)" joins "Living Room".
+- The Home Screen's Photos widget shows the photos added to Rehome. With none, it says "Add Photo Here" and a tap adds one;
+  the face's photo tile uses the same words.
+- Home Assistant 2026.2 renamed Add-ons to Apps: every place that sends you there now says **Settings → Apps** (Add-ons on older
+  Home Assistant), in the License page, Use on Another iPad, the server's messages, DOCS, README and STANDALONE.
 - Security:
   - Rehome's pages now refuse any script that isn't Rehome's own (a Content-Security-Policy), and picture addresses from Home
     Assistant are escaped everywhere they're drawn.

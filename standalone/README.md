@@ -1,6 +1,6 @@
-# Rehome without add-ons (Home Assistant Container or Core)
+# Rehome without the Apps page (Home Assistant Container or Core)
 
-If your Home Assistant has no **Add-ons** page (Settings shows no Add-ons entry), Rehome runs next to it in Docker, on the same
+If your Home Assistant has no **Apps** page in Settings (called Add-ons before Home Assistant 2026.2), Rehome runs next to it in Docker, on the same
 computer: for example a Raspberry Pi.
 
 ```
