@@ -1,15 +1,18 @@
 # Rehome
 
+**Old iPad. New purpose.** Give an old iPad a new role at home.
+
 Rehome turns an iPad into a wall display for your home: the clock, the thermostat, your lights, locks, shades, scenes and the
 weather, on glass tiles over a satin wallpaper. The Rehome app needs iPadOS 26. **This version runs in Safari**, so iPads that
 can't update keep working, all the way back to the first iPad:
 
-| iPad | Its last iOS | How Rehome runs |
-|---|---|---|
-| iPad Air 2, mini 4, iPad 5th and 6th gen, 2015–2017 iPad Pros, iPad Air, mini 2 and 3 | iPadOS 12–15 | Full: frosted glass and the app's own motion. |
-| iPad 4 | iOS 10.3.3 | Classic mode. |
-| iPad 2, iPad 3, iPad mini (1st gen) | iOS 9.3.5 | Classic mode. |
-| The first iPad (2010) | iOS 5.1.1 | Classic mode, and it talks to Home Assistant over plain HTTP. |
+| iPad | Its last iOS | How Rehome runs | How it opens Rehome |
+|---|---|---|---|
+| iPad Air 2, mini 4, iPad 5th gen and later, every iPad Pro | iPadOS 15.4 or later | Full: frosted glass and the app's own motion. | Through Home Assistant, or direct access |
+| iPad Air (1st gen), iPad mini 2 and 3 | iOS 12.5 | Full. | **Direct access only** |
+| iPad 4 | iOS 10.3.3 | Classic mode. | **Direct access only** |
+| iPad 2, iPad 3, iPad mini (1st gen) | iOS 9.3.5 | Classic mode. | **Direct access only** |
+| The first iPad (2010) | iOS 5.1.1 | Classic mode, over plain HTTP. | **Direct access only** |
 
 **Classic mode** turns on by itself on iOS 10 and older. The faces, tiles, pages and controls are the same, with three
 differences:
@@ -22,17 +25,20 @@ Expect the first iPad to be slower to start, and less smooth while rearranging t
 It is a Home Assistant add-on. You install it in your own Home Assistant, and the iPad talks only to your Home Assistant.
 Nothing about your home goes to the internet. The only outside connection is the weekly license check (see Privacy).
 
+
+**Home Assistant without add-ons** (Container or Core, for example on a Raspberry Pi)? Run Rehome's own server beside it, as described in docs/STANDALONE.md in Rehome's files.
+
 ## What you need
-- Home Assistant OS or Supervised (the kind with an **Add-ons** page, under Settings).
+- Home Assistant OS or Supervised (the kind with an **Add-ons** page, under Settings), on a 64-bit machine (ARM or Intel/AMD).
 - An iPad on the same network as Home Assistant.
 
 ## Install
-1. In Home Assistant open **Settings → Add-ons → Add-on Store**, then **⋮ → Repositories**, and add the Rehome repository
-   address you received with your purchase.
+1. In Home Assistant open **Settings → Add-ons → Add-on Store**, then **⋮ → Repositories**, and add the Rehome repository:
+   `https://github.com/rehome-app/rehome-addons`
 2. Find **Rehome** in the store, open it and press **Install**.
-3. Open the **Configuration** tab, paste the license key from your purchase page (it looks like `RH-XXXX-XXXX-XXXX-XXXX`)
-   into **License key**, and press **Save**. If Rehome is already running, press **Restart** afterwards.
-4. Press **Start**. Turn on **Show in sidebar** if you'd like a Rehome entry in Home Assistant's menu.
+3. Turn on **Show in sidebar** (so Rehome has its own entry in Home Assistant's menu), then press **Start**.
+4. Add your key, either way: in Rehome, swipe up, tap **Settings → Rehome License**, paste the key from your purchase email and
+   tap **Save Key**; or open the add-on's **Configuration** tab, paste it into **License key**, **Save**, then **Restart**.
 
 Without a key, or until the key has been checked once (this needs an internet connection), Rehome shows its sample home with
 one quiet line at the bottom saying why. Once the key is good it switches to your home by itself within a minute.
@@ -41,20 +47,28 @@ one quiet line at the bottom saying why. Once the key is good it switches to you
 **The simple way (through Home Assistant).** On the iPad, open Home Assistant in Safari, sign in, and choose **Rehome** in the
 sidebar. Home Assistant checks who you are, and Rehome never sees your password or any key.
 
-**Full screen from the Home Screen.** Home Assistant's own toolbar stays above add-on pages, so for a true wall display:
-1. In the add-on's **Configuration** tab, turn on **direct_access** and enter a **pairing_code** of 6 to 12 digits.
-2. In the **Network** section of the same tab, enter a port for 8099/tcp (8099 is fine) and press **Save**, then **Restart**.
-3. On the iPad, open Safari at `http://<your Home Assistant address>:8099`, for example `http://homeassistant.local:8099`.
-   If the `.local` name doesn't open, use the number address shown in Home Assistant under Settings → System → Network.
-4. Tap **Share → Add to Home Screen** first, then open Rehome from its new icon. It fills the screen.
-5. Enter the pairing code there. A Home Screen app keeps its own sign-in, separate from Safari, which is why you pair inside
-   it. The iPad is remembered from then on.
+**Full screen on this iPad (newer iPads).** In Rehome inside Home Assistant, swipe up, tap **Settings → Use on Another iPad →
+Put Rehome on This iPad's Home Screen**, then **Open Rehome Full Screen**. In Safari tap **Share → Add to Home Screen**, then
+open Rehome from its new icon. It sets itself up.
 
-**iPads on iOS 10 and older should use this way.** Home Assistant doesn't support Safari that old, so the simple way above
-may not open on them.
+**Old iPads (direct access, port 8099).** Rehome also opens straight from the add-on, without Home Assistant's pages.
+1. Get a code, either way:
+   - the add-on's **Log** tab shows one on its first start ("To set up an iPad: … type 1234 5678"), or
+   - on a phone or computer with Rehome open, go to **Settings → Use on Another iPad → Make a Setup Sheet**. Print it, or keep
+     it on screen. The code works once, for 7 days.
+2. On the old iPad, open Safari and type the address from the sheet, for example `http://homeassistant.local:8099`. If the
+   `.local` name doesn't open, use the number address shown in Home Assistant under Settings → System → Network.
+3. Tap **Share → Add to Home Screen**, then open Rehome from its new icon. It fills the screen.
+4. Type the code and tap **Pair**. The iPad is remembered from then on. A Home Screen app keeps its own sign-in, separate from
+   Safari, which is why you pair inside it.
 
-Only devices that know the pairing code can open the direct port, and the add-on refuses after eight wrong tries in five minutes.
-To remove every paired device, change the pairing code and restart the add-on.
+**iPads that can't update to iOS 15.4 must use this way.** That's the iPad Air (1st gen), iPad mini 1, 2 and 3, and the
+iPad 1, 2, 3 and 4. Home Assistant's own pages need Safari 15.4 or later, so its sidebar won't open on them. Rehome itself
+runs fine there through direct access.
+
+Only paired devices can open the direct port, and the add-on refuses after eight wrong tries in five minutes. To remove every
+paired device, set a new **pairing_code** in the add-on's Configuration (any 6 to 12 digits; it also works as a fixed code)
+and restart the add-on. To turn direct access off, switch off **direct_access**.
 
 ## Using it
 - **Swipe left or right** to change faces: Home Modular, Home Modular Plus and Modular.
@@ -67,8 +81,8 @@ To remove every paired device, change the pairing code and restart the add-on.
   **W**ide, **M**edium, **L**arge) or **Change…** what it shows. **+** adds a tile. **Customize** picks the number of rows, the
   wallpaper and which faces you see. Change… → **Suggested** offers ready-made layouts for your home. Press **Done** when you're finished.
 - **Every page has the round ✕** at the top left. You can also swipe up from the bottom edge to close it.
-- The **Intercom** tile talks to Home Assistant's Assist: type a request on any iPad. On iPadOS 13.4 or later, over HTTPS, you can
-  also hold to talk.
+- **Ask Home Assistant**: touch and hold the top of a face (on the wallpaper, not a tile), or tap the waveform in Control
+  Center, and type a request. On iPadOS 13.4 or later, over HTTPS, you can also talk while you hold.
 
 Rehome uses Home Assistant's areas for rooms, its scenes and scripts, its first weather entity (for example Met.no) and its
 calendars. Layouts are saved on each iPad.
@@ -111,3 +125,21 @@ the license key, a random install id made on your Home Assistant, and the words 
 gets back a signed token. Nothing about your home, devices or people is sent. If the server can't be reached, Rehome keeps
 working for at least six weeks. Music sign-ins stay in Home Assistant: the add-on stores no music tokens, and the phone code carries no
 secret.
+
+**See it in Rehome.** In Rehome, swipe up, tap **Settings → Privacy**:
+- **What Rehome sends:** the license check's fields, made from the same code that sends them;
+- **Outside connections:** every connection that left your home network, with its time, address and size. On a normal day
+  there is one address, `key.userehome.com`, when Rehome starts and about once a week. If you chose an AI service for the
+  assistant in Voice & Assistant, its address shows there too, only when you ask something;
+- **What this iPad can do through Rehome**, and what it can't. Rehome's add-on refuses anything that changes Home Assistant
+  itself (updates, backups, add-ons, users), runs code or shell commands, downloads files, or sends notifications.
+
+**Watch it yourself.**
+1. In your router's connection log (or a tool such as Pi-hole), watch the Home Assistant machine. Rehome's only outside address
+   is `key.userehome.com`.
+2. Block `key.userehome.com` at your router. Rehome keeps working, with your home, for about six weeks, then shows the sample
+   home until it can check again. Unblock it and it carries on.
+
+**What the add-on asks Home Assistant for.** Its page in Home Assistant lists it: access to Home Assistant's API (to show and
+control your home), the `media` folder (your photos), and port 8099 (old iPads). It does not ask for host networking, the
+Supervisor API, full access or privileged mode.

@@ -1,0 +1,18 @@
+# Rehome without add-ons (Home Assistant Container or Core)
+
+If your Home Assistant has no **Add-ons** page (Settings shows no Add-ons entry), Rehome runs next to it in Docker, on the same
+computer: for example a Raspberry Pi.
+
+```
+mkdir -p ~/rehome && cd ~/rehome
+curl -fsSLO https://raw.githubusercontent.com/rehome-app/rehome-addons/main/standalone/docker-compose.yml
+touch rehome.env
+docker compose up -d && docker compose logs --tail 30
+```
+
+The log shows `pairing code for an iPad: 123456`. On the iPad, open `http://<this computer's address>:8099` in Safari, tap
+**Share → Add to Home Screen**, open Rehome from the new icon and type the code. You'll see the sample home.
+
+To show your own home, put your Home Assistant address and a long-lived access token in `rehome.env` (see
+`rehome.env.example`), run `chmod 600 rehome.env && docker compose up -d`, then paste your key in Rehome under
+**Settings → Rehome License**. Step-by-step help: https://userehome.com/pages/setup

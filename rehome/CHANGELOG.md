@@ -1,5 +1,55 @@
 # Changelog
 
+## 0.5.0
+- **When an exact native look and accessibility disagree, accessibility wins** (the owner's rule): the light page's Turn On /
+  Turn Off button, On/Off words on tiles, text never under 16 real pixels, rows and buttons at least 44, the Paste hint, error
+  messages read out by VoiceOver, and names for every button.
+- License page, old iPads (iOS 5–10): tapping Save Key right after pasting, while the key box still had focus, showed nothing:
+  no "Saving…" and no red line for a wrong key, until the box lost focus. Save, Paste and Remove now let go of the box first.
+- Standalone: the Docker health check follows `REHOME_PORT`, so a changed port no longer shows "unhealthy".
+- Security:
+  - Rehome's pages now refuse any script that isn't Rehome's own (a Content-Security-Policy), and picture addresses from Home
+    Assistant are escaped everywhere they're drawn.
+  - The add-on passes on only the Home Assistant messages the dashboard uses. It never passes on calls that change Home
+    Assistant itself (restart, add-ons, backups, users, scripts that run code).
+  - Pairing: each device gets its own lockout after wrong codes, and only local addresses are accepted.
+  - Pairing codes and the license key accept only requests from Rehome's own page.
+  - Pictures are served only as pictures, and picture paths can't climb out of Home Assistant's picture addresses.
+  - The live connection to Home Assistant accepts only Rehome's own page (another website opened on an old iPad can't use it).
+- **Settings → Privacy:** what Rehome sends (made from the code that sends it), every outside connection with its time,
+  address and size, and what an iPad can and can't do through Rehome. The welcome says it in one line. DOCS explains how to
+  watch it yourself.
+- A shorter first-run welcome: what Rehome does, then the setup steps. An arrow points at Safari's Share button for Add to
+  Home Screen.
+- A "Swipe up for apps" hint, if nobody has opened the Home Screen in the first minute.
+- One Timers app with World Clock, Alarms and Timers tabs (it was three apps).
+- Intercom and Messages are removed: the Intercom tile and app, Settings → Displays and the Messages app are gone. A saved
+  layout or Home Screen that had them drops them. To ask Home Assistant something, hold the top of a face or tap the waveform
+  in Control Center.
+- Homes that lack things say so: "Weather Unavailable", "No Calendar", "No Lists", "No speakers in Home Assistant". The
+  Thermostat app shows only with a thermostat.
+- Setting up an old iPad no longer needs a second device at hand:
+  - **Use on Another iPad → Make a Setup Sheet:** the address and a code in big letters (and a QR code), to print or keep on
+    screen. The code works once, for 7 days.
+  - The add-on's Log tab shows a code for the first iPad on its first start.
+  - In Home Assistant's sidebar, **Put Rehome on This iPad's Home Screen** opens Rehome full screen in Safari, ready to add to the
+    Home Screen; opened from its new icon it sets itself up.
+- Rehome's own server for Home Assistant without add-ons (Container or Core, e.g. on a Raspberry Pi): Docker, step by step in
+  docs/STANDALONE.md.
+- License page: plain steps, a Paste button, the key found in whatever is pasted, a clear red message under the field, "Buy
+  Rehome", and "Rehome is now using your home" after the restart. Rehome License is the first row in Settings.
+- Display: **Style**, Liquid Glass or Flat (solid tiles and panels, no blur).
+- Photos: a clear "Add Photo Here" when there are none; photos are made smaller on the iPad before they're sent (much faster),
+  with real progress; three big buttons to add them; on Rehome's own server they're kept with its data.
+- A real home starts on Home Modular Plus, with the same faces as the sample home. The sample Home Modular Plus matches the
+  owner's own wall iPad at every screen size, with one photo.
+- No face flashes before the welcome on a first open.
+- The light page has a Turn On / Turn Off button.
+- Sample music uses made-up songs and artists.
+- Settings: "Add an Old iPad" is now "Use on Another iPad", with a line saying what it does. Performance is gone (developers:
+  `?dev=1`). The Rehome icon in Settings is fixed. Help text is larger and darker.
+- Updates reach iPads on the next load (every script and style address carries its own stamp).
+
 ## 0.4.0
 - License key: paste it in Configuration → License key. Without a good key Rehome shows the sample home with one quiet line
   saying why, and switches to your home by itself once the key checks out. The add-on checks the key at start and weekly

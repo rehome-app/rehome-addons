@@ -1,5 +1,5 @@
 name: Rehome
-version: "0.4.0"
+version: "0.5.0"
 slug: rehome
 url: "https://github.com/rehome-app/rehome-addons"
 description: The Rehome wall dashboard for iPads that are too old for the app (iOS 5 and later), in Safari.
@@ -14,13 +14,16 @@ ingress_port: 8099
 panel_icon: mdi:tablet-dashboard
 panel_title: Rehome
 homeassistant_api: true
+map:
+  - type: media
+    read_only: false
 ports:
-  8099/tcp: null
+  8099/tcp: 8099
 ports_description:
-  8099/tcp: Direct access for an iPad's Home Screen (off unless you set a port and turn on direct access)
+  8099/tcp: Direct access, for iPads that can't open Home Assistant (pair them in Rehome under Settings → Use on Another iPad)
 options:
   license_key: ""
-  direct_access: false
+  direct_access: true
   pairing_code: ""
 schema:
   license_key: password?

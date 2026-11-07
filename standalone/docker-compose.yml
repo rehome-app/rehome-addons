@@ -1,0 +1,22 @@
+# Rehome for Home Assistant Container or Core (no Add-ons page). Step by step: https://userehome.com/pages/setup
+# Folder layout (for example ~/rehome on the Home Assistant computer):
+#   docker-compose.yml   this file
+#   rehome.env           HA_URL and HA_TOKEN, written by you (chmod 600)
+# Start: docker compose up -d     Update: docker compose pull && docker compose up -d     Logs: docker compose logs --tail 50
+services:
+  rehome:
+    image: ghcr.io/rehome-app/rehome-standalone:latest   # arm64 (Raspberry Pi) and amd64
+    container_name: rehome
+    restart: unless-stopped
+    network_mode: host                    # reaches Home Assistant at http://localhost:<its port>
+    env_file: rehome.env                  # HA_URL, HA_TOKEN, and optionally REHOME_LICENSE_KEY
+    environment:
+      REHOME_STANDALONE: "1"              # every device pairs; licensing on
+      REHOME_PORT: "8099"                 # the iPad opens http://<this computer>:8099 (not Home Assistant's port)
+      REHOME_DIRECT_PORT: "8099"          # keep equal to REHOME_PORT
+    volumes:
+      - rehome-data:/data                 # pairings, the saved license key, the license token
+      - rehome-media:/media               # your photos (uploaded from a phone in Rehome)
+volumes:
+  rehome-data:
+  rehome-media:

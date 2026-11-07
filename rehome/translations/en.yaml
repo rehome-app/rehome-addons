@@ -4,7 +4,7 @@ configuration:
     description: The key from your purchase page (RH-XXXX-XXXX-XXXX-XXXX). Without one, Rehome shows the sample home.
   direct_access:
     name: Direct access
-    description: Lets an iPad's Home Screen icon open Rehome on its own port. Also set the port under Network.
+    description: Lets older iPads, and Home Screen icons, open Rehome on its own port (8099 under Network). Each one pairs once with a code from Rehome's Settings → Use on Another iPad.
   pairing_code:
     name: Pairing code
-    description: 6 to 12 digits an iPad types once to pair over direct access.
+    description: Optional. A fixed code of 6 to 12 digits for pairing. Leave it empty and use the one-time codes in Settings → Use on Another iPad.
