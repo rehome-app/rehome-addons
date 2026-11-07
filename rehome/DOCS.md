@@ -67,9 +67,22 @@ open Rehome from its new icon. It sets itself up.
 iPad 1, 2, 3 and 4. Home Assistant's own pages need Safari 15.4 or later, so its sidebar won't open on them. Rehome itself
 runs fine there through direct access.
 
-Only paired devices can open the direct port, and the add-on refuses after eight wrong tries in five minutes. To remove every
-paired device, set a new **pairing_code** in Rehome's Configuration, under Settings → Apps (Add-ons on older Home Assistant): any 6 to 12 digits, which also works as a fixed code,
-and restart the add-on. To turn direct access off, switch off **direct_access**.
+Only paired devices can open the direct port. A device waits after eight wrong tries in five minutes; one noisy device can't
+lock the others out. Only Rehome opened through Home Assistant can set up another iPad, change the key or manage paired iPads;
+a paired iPad that asks sees "Ask the person who set up Rehome".
+
+**Paired Devices.** In Rehome opened from Home Assistant's sidebar, **Settings → Paired Devices** lists every paired iPad with
+when it was last used. Tap a name to rename it. **Remove** stops that iPad at once. An iPad that isn't used for 90 days must
+pair again. Paired iPads talk to the add-on over plain http on your Wi-Fi, as Home Assistant's own pages do over http, so
+someone already on your Wi-Fi could copy an iPad's sign-in. If that worries you, turn on **Locks, Alarms & Garage Doors → Only
+From Home Assistant**: paired iPads still show them, but can't unlock, disarm or open them, unless a
+scene or script you made does it.
+
+To remove every paired device at once, set a new **pairing_code** in Rehome's Configuration, under Settings → Apps (Add-ons on
+older Home Assistant): any 8 to 12 digits, which also works as a fixed code, and restart the add-on. If your iPads open Rehome
+by a name other than `homeassistant.local`, a number address, a one-word name or a Tailscale name (`*.ts.net`), for example
+`rehome.lan`, add it to
+**allowed_hosts**. To turn direct access off, switch off **direct_access**.
 
 ## Using it
 - **Swipe left or right** to change faces: Home Modular, Home Modular Plus and Modular.

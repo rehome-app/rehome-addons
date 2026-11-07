@@ -7,4 +7,7 @@ configuration:
     description: Lets older iPads, and Home Screen icons, open Rehome on its own port (8099 under Network). Each one pairs once with a code from Rehome's Settings → Use on Another iPad.
   pairing_code:
     name: Pairing code
-    description: Optional. A fixed code of 6 to 12 digits for pairing. Leave it empty and use the one-time codes in Settings → Use on Another iPad.
+    description: Optional. A fixed code of 8 to 12 digits for pairing. Leave it empty and use the one-time codes in Settings → Use on Another iPad.
+  allowed_hosts:
+    name: Other addresses
+    description: Optional. Other names your iPads use to open Rehome, separated by commas (for example rehome.lan). homeassistant.local, number addresses, one-word names and Tailscale names (*.ts.net) always work.

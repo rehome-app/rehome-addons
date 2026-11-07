@@ -1,5 +1,5 @@
 name: Rehome
-version: "0.5.0"
+version: "0.5.1"
 slug: rehome
 url: "https://github.com/rehome-app/rehome-addons"
 description: The Rehome wall dashboard for iPads that are too old for the app (iOS 5 and later), in Safari.
@@ -25,8 +25,10 @@ options:
   license_key: ""
   direct_access: true
   pairing_code: ""
+  allowed_hosts: ""
 schema:
   license_key: password?
   direct_access: bool
-  pairing_code: match(^([0-9]{6,12})?$)
+  pairing_code: match(^([0-9]{8,12})?$)
+  allowed_hosts: str?
 image: "ghcr.io/rehome-app/rehome"

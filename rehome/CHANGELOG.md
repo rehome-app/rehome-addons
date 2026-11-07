@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.5.1
+Security fixes from the second security review, and two fixes to the light page found on a real iPad. Nothing changes for an
+iPad that is already set up, except where it says so.
+- **The add-on now really connects to Home Assistant.** In 0.5.0, Home Assistant's app base image started Rehome with an empty
+  environment. Rehome never received its Home Assistant sign-in or its own settings, so the add-on showed the sample home with no
+  key field, and its port 8099 wasn't limited to paired iPads. Rehome now keeps its environment. If the sign-in is ever missing
+  again, Rehome says so in its log and on screen, and stays closed to everything except Home Assistant itself.
+- **The light page's colour panel no longer covers Turn Off or the brightness hint.** It now sits above Turn Off and the colour
+  button on every iPad, the right way up or sideways. The hint steps aside while the panel is open. The colour dots are at least
+  44 points, and the hue and white sliders start where the light really is.
+- **A colour bulb no longer seems to change on its own.** A bulb that fades (LIFX does) reports each step of the fade, and the page
+  used to follow those steps back through old colours and brightness after you let go. Now what you chose stays on screen until
+  the bulb reports it, or for 5 seconds at most. While your finger is down, your drag always wins, and the colour you let go on
+  is always sent. Rehome never sends anything to Home Assistant because a state changed.
+- **Settings → Paired Devices** (new). Every iPad paired with Rehome's own address, with its name and when it was last used. Tap a
+  name to rename it. **Remove** stops that iPad at once, even mid-use: it has to pair again with a new code.
+- An iPad now stays paired for 90 days after it was last used, instead of a full year from pairing. Every use starts the 90 days
+  again, so an iPad on the wall never notices.
+- **Locks, Alarms & Garage Doors → Only From Home Assistant** (in standalone: Only From the Admin iPad). Off unless you turn it on.
+  When it's on, paired iPads still show locks, alarms and garage doors but can't unlock, disarm or open them, unless a
+  scene or script you made does it.
+- Setting up another iPad, changing the license key (which restarts Rehome) and managing paired iPads now need Home Assistant
+  itself: Rehome opened from Home Assistant's sidebar. In standalone it's the **admin**: the iPad that set Rehome up. The admin
+  can hand the job to another iPad (Paired Devices → Make Admin), and a lost admin is replaced by restarting Rehome and pairing
+  with the code in its log. Any other iPad that asks sees "Ask the person who set up Rehome."
+- A fixed **pairing_code** must now be 8 to 12 digits. A shorter one is ignored (the log says so); iPads it already paired stay
+  paired.
+- One device typing wrong codes can no longer lock every other device out of pairing.
+- Rehome now answers only to its number address, `.local` names, `.home.arpa`, `.internal`, one-word names and Tailscale's names
+  (`*.ts.net`, and bare MagicDNS names). If your iPads use another name, such as `rehome.lan`, add it to the new
+  **allowed_hosts** option (standalone: `REHOME_ALLOWED_HOSTS`).
+- Standalone answers only devices on your home network: private addresses, and Tailscale (100.64.0.0/10 and fd7a:115c:a1e0::/48),
+  so reaching it over Tailscale from away keeps working. `REHOME_ALLOW_PUBLIC=1` turns that off.
+- Rehome's files with sign-in details (`sessions.json`, `license.json`) can now be read only by Rehome.
+- Two ways a hostile Home Assistant setting could have put a fake link or overlay on the screen are closed: a "javascript:" address
+  in Home Assistant's own URL setting, and a quote mark in a picture's address.
+
 ## 0.5.0
 - **When an exact native look and accessibility disagree, accessibility wins** (the owner's rule): the light page's Turn On /
   Turn Off button, On/Off words on tiles, text never under 16 real pixels, rows and buttons at least 44, the Paste hint, error
