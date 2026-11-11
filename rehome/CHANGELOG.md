@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.2
+- Settings > Display & Night now has a saved **24-Hour Time** switch for each iPad.
+- Digital faces, clock tiles, night clock, alarms, world clocks, calendar times and weather times share that setting.
+  Without a saved choice, the browser's locale is used; older browsers without locale support keep 12-hour time.
+- Update the Rehome app/add-on (or pull and recreate the standalone Docker container), then reload Rehome on each iPad.
+  Existing pairings, layouts, photos and license settings are preserved.
+
 ## 0.5.1
 Security fixes from the second security review, and two fixes to the light page found on a real iPad. Nothing changes for an
 iPad that is already set up, except where it says so.

@@ -16,3 +16,18 @@ The log shows `pairing code for an iPad: 123456`. On the iPad, open `http://<thi
 To show your own home, put your Home Assistant address and a long-lived access token in `rehome.env` (see
 `rehome.env.example`), run `chmod 600 rehome.env && docker compose up -d`, then paste your key in Rehome under
 **Settings → Rehome License**. Step-by-step help: https://userehome.com/pages/setup
+
+## Updating
+
+In the folder containing your Rehome Compose file, run:
+
+```sh
+docker compose pull
+docker compose up -d
+```
+
+Keep your existing volumes and `rehome.env`; do not remove volumes or clear the iPad's browser data.
+Once the new container is running, reload Rehome on each iPad, or fully close and reopen its Home Screen app.
+Publishing a release does not automatically update a running Docker container.
+
+For 24-hour time, open Rehome's **Settings > Display & Night > 24-Hour Time**. This choice is saved on each iPad.

@@ -44,6 +44,17 @@ Nothing about your home goes to the internet. The only outside connection is the
 Without a key, or until the key has been checked once (this needs an internet connection), Rehome shows its sample home with
 one quiet line at the bottom saying why. Once the key is good it switches to your home by itself within a minute.
 
+## Updating
+In Home Assistant, open **Settings > Apps > Rehome** (or **Add-ons > Rehome**) and install the available update.
+Automatic installation depends on whether you enabled **Auto update** for Rehome. A new release does not force an update.
+After updating, reload Rehome on each iPad, or fully close and reopen its Home Screen app. Keep the same browser and address;
+you do not need to clear its data or pair it again.
+
+For standalone Docker installations, run `docker compose pull` followed by `docker compose up -d` in the folder containing
+Rehome's Compose file. Keep the existing volumes and configuration. Then reload the iPads as above.
+
+For 24-hour time, open Rehome's **Settings > Display & Night > 24-Hour Time**. The choice is saved separately on each iPad.
+
 ## Open it on the iPad
 **The simple way (through Home Assistant).** On the iPad, open Home Assistant in Safari, sign in, and choose **Rehome** in the
 sidebar. Home Assistant checks who you are, and Rehome never sees your password or any key.
