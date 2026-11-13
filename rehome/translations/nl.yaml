@@ -1,0 +1,13 @@
+configuration:
+  license_key:
+    name: "Licentiesleutel"
+    description: "De sleutel van je aankooppagina (RH-XXXX-XXXX-XXXX-XXXX). Zonder sleutel toont Rehome de voorbeeldwoning."
+  direct_access:
+    name: "Directe toegang"
+    description: "Laat oudere iPads en beginschermpictogrammen Rehome via poort 8099 openen. Elk apparaat wordt eenmalig gekoppeld met een code uit Instellingen → Op een andere iPad gebruiken."
+  pairing_code:
+    name: "Koppelcode"
+    description: "Optioneel. Een vaste code van 8 tot 12 cijfers. Laat dit leeg om eenmalige codes in Rehome te gebruiken."
+  allowed_hosts:
+    name: "Andere adressen"
+    description: "Optioneel. Andere hostnamen voor Rehome, gescheiden door komma’s. homeassistant.local, IP-adressen, hostnamen uit één woord en Tailscale-namen (*.ts.net) werken altijd."

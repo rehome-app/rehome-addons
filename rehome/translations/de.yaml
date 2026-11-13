@@ -1,0 +1,13 @@
+configuration:
+  license_key:
+    name: "Lizenzschlüssel"
+    description: "Der Schlüssel von deiner Kaufseite (RH-XXXX-XXXX-XXXX-XXXX). Ohne Schlüssel zeigt Rehome das Demo-Zuhause."
+  direct_access:
+    name: "Direkter Zugriff"
+    description: "Ermöglicht älteren iPads und Home-Bildschirm-Symbolen den Zugriff auf Rehome über Port 8099. Jedes Gerät wird einmal mit einem Code aus Einstellungen → Auf einem anderen iPad verwenden gekoppelt."
+  pairing_code:
+    name: "Kopplungscode"
+    description: "Optional. Ein fester Code mit 8 bis 12 Ziffern. Lass das Feld leer, um Einmalcodes in Rehome zu verwenden."
+  allowed_hosts:
+    name: "Weitere Adressen"
+    description: "Optional. Weitere Hostnamen für Rehome, durch Kommas getrennt. homeassistant.local, IP-Adressen, einteilige Hostnamen und Tailscale-Namen (*.ts.net) funktionieren immer."

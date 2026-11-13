@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.4
+- Rehome now supports German, Dutch and French. Choose English, Deutsch, Nederlands or Français in Settings → Language. The choice is saved separately on each browser.
+- German, Dutch and French default to 24-hour time unless you have already chosen a clock format. Your device names, layouts, pairings, photos and license settings are preserved.
+- Translations are bundled locally with Rehome; no translation service receives your home data. Some server messages and text in screenshots remain English.
+- Update the Rehome app/add-on, or pull and recreate the standalone Docker container, then reload Rehome on each iPad. This release does not add a claim of tested Fire/Android compatibility.
+
 ## 0.5.3
 - Camera snapshots now wait for the complete image from Home Assistant. Images arriving in several network packets no longer get cut off. Incomplete or oversized responses are rejected instead of shown as successful images.
 - The four-square button in a camera view now opens a camera overview even when the Home Camera face is hidden, and recognizes extra copies of that face.

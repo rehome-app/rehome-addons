@@ -1,0 +1,13 @@
+configuration:
+  license_key:
+    name: "Clé de licence"
+    description: "La clé de votre page d’achat (RH-XXXX-XXXX-XXXX-XXXX). Sans clé, Rehome affiche la maison de démonstration."
+  direct_access:
+    name: "Accès direct"
+    description: "Permet aux anciens iPad et aux icônes de l’écran d’accueil d’ouvrir Rehome sur le port 8099. Chaque appareil est associé une seule fois avec un code de Réglages → Utiliser sur un autre iPad."
+  pairing_code:
+    name: "Code d’association"
+    description: "Facultatif. Un code fixe de 8 à 12 chiffres. Laissez ce champ vide pour utiliser les codes à usage unique de Rehome."
+  allowed_hosts:
+    name: "Autres adresses"
+    description: "Facultatif. Autres noms d’hôte pour Rehome, séparés par des virgules. homeassistant.local, les adresses IP, les noms d’hôte simples et les noms Tailscale (*.ts.net) fonctionnent toujours."

@@ -55,6 +55,11 @@ Rehome's Compose file. Keep the existing volumes and configuration. Then reload 
 
 For 24-hour time, open Rehome's **Settings > Display & Night > 24-Hour Time**. The choice is saved separately on each iPad.
 
+## Language
+In Rehome, open **Settings → Language** and choose **English**, **Deutsch**, **Nederlands** or **Français**. The choice is saved for that browser; each iPad can use a different language. On first use, Rehome follows the browser language when supported. Your Home Assistant device names and saved layouts stay unchanged.
+
+German, Dutch and French default to 24-hour time. A saved **24-Hour Time** choice takes priority. Translations are included in Rehome and do not use an external translation service. Some server messages and text within screenshots remain English.
+
 ## Open it on the iPad
 **The simple way (through Home Assistant).** On the iPad, open Home Assistant in Safari, sign in, and choose **Rehome** in the
 sidebar. Home Assistant checks who you are, and Rehome never sees your password or any key.
