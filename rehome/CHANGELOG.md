@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.3
+- Camera snapshots now wait for the complete image from Home Assistant. Images arriving in several network packets no longer get cut off. Incomplete or oversized responses are rejected instead of shown as successful images.
+- The four-square button in a camera view now opens a camera overview even when the Home Camera face is hidden, and recognizes extra copies of that face.
+- Update the Rehome app/add-on (or pull and recreate the standalone Docker container), then reload Rehome on each iPad. Existing pairings, layouts, photos and license settings are preserved.
+
 ## 0.5.2
 - Settings > Display & Night now has a saved **24-Hour Time** switch for each iPad.
 - Digital faces, clock tiles, night clock, alarms, world clocks, calendar times and weather times share that setting.
