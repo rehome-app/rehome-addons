@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0
+- Family Board brings your clock, two configurable widgets, selected Home Assistant calendars, shared lists and recurring household tasks together.
+- More recommended Modular layouts. Hold the wallpaper, then swipe up or down to preview layouts. Tap Use to keep one; closing leaves your saved layout unchanged.
+- Personal photo and color backgrounds, bin-day tiles and household notices with acknowledge and snooze.
+- Guest mode shows only the home controls you select and uses a PIN to return to your own dashboard.
+- Clearer camera connection states, bounded retries and snapshot fallback, plus a live camera grid you can opt into.
+- Read these notes any time in Settings > What's New. Existing licenses, pairings, layouts and photos are preserved. There is no trial in this release.
+- Update Rehome in Home Assistant, or pull and recreate your standalone container, then reload Rehome on each display.
+
 ## 0.5.4
 - Rehome now supports German, Dutch and French. Choose English, Deutsch, Nederlands or Français in Settings → Language. The choice is saved separately on each browser.
 - German, Dutch and French default to 24-hour time unless you have already chosen a clock format. Your device names, layouts, pairings, photos and license settings are preserved.

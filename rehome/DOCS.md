@@ -173,3 +173,15 @@ secret.
 **What the add-on asks Home Assistant for.** Its page in Home Assistant lists it: access to Home Assistant's API (to show and
 control your home), the `media` folder (your photos), and port 8099 (old iPads). It does not ask for host networking, the
 Supervisor API, full access or privileged mode.
+
+
+## Forgot your guest-mode PIN?
+
+The person who manages Home Assistant can recover access without deleting household data:
+
+1. In Home Assistant, open **Settings → Apps → Rehome → Configuration** (called Add-ons on older versions).
+2. Turn on **reset_guest_access**, save, and restart Rehome. This ends guest mode on all Rehome displays.
+3. Turn **reset_guest_access** off again and save, so a later restart will not end a new guest session.
+4. Reload the display. Choose a new PIN next time you start guest mode.
+
+For a standalone container, temporarily set `REHOME_RESET_GUEST_ACCESS=1`, restart, then remove it. If you have a shell inside a running container, `python3 /app/rehome_household.py --reset-guests /data` also works immediately. This preserves household tiles, tasks, calendars and notices. These recovery controls require server-owner access; there is no guest-accessible reset endpoint.
