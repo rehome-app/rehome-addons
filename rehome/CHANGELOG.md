@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.1
+- Power, battery and other sensor tiles now refresh when Home Assistant sends new readings, without resizing the tile or locking and unlocking the display. Unavailable and removed sensors refresh too.
+- The Modular gallery now shows visual layout choices. Tap a diagram or swipe vertically to preview, then use the checkmark to apply. Closing without applying keeps your saved layout.
+- Recommended layouts reuse compatible widgets and device choices from your saved Modular setup. The original full-grid presets appear first, with spacious alternatives afterward.
+- Clock and weather glass now uses the same soft treatment as surrounding tiles.
+- Existing licenses, pairings, layouts and photos are preserved. Update the Home Assistant add-on or standalone container, then reload each display.
+
 ## 0.6.0
 - Family Board brings your clock, two configurable widgets, selected Home Assistant calendars, shared lists and recurring household tasks together.
 - More recommended Modular layouts. Hold the wallpaper, then swipe up or down to preview layouts. Tap Use to keep one; closing leaves your saved layout unchanged.
