@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.2
+- New BB-8 clock face: a 3D clock standing in the dunes. BB-8 rolls in to say hello when the clock opens, comes back every five minutes with a different routine and leaves his tracks in the sand. On the hour a dust storm blows through and leaves the sand fresh.
+- To add it, hold the wallpaper to open the face gallery, tap **+**, then choose **BB-8**. Tap the face to turn his sounds on or off.
+- The face works with 12-hour and 24-hour time. iPads on iOS 10 or earlier show the dunes and the 3D time without the animation.
+- This update is about 45 MB larger than 0.6.1 because of the face's video. Existing licenses, pairings, layouts and photos are preserved. Update the Home Assistant add-on or standalone container, then reload each display.
+- Credit: BB-8 3D model by lebster4, CC BY 4.0. BB-8 and Star Wars are trademarks of Lucasfilm Ltd.; this face is not affiliated with or endorsed by Lucasfilm or Disney.
+
 ## 0.6.1
 - Power, battery and other sensor tiles now refresh when Home Assistant sends new readings, without resizing the tile or locking and unlocking the display. Unavailable and removed sensors refresh too.
 - The Modular gallery now shows visual layout choices. Tap a diagram or swipe vertically to preview, then use the checkmark to apply. Closing without applying keeps your saved layout.
