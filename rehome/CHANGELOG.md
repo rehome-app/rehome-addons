@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.4
+- Home Camera now has a Cameras tab in Customize. Tap a camera to hide it or show it again; choices stay saved for that face on this display.
+- Family Board Customize scrolls correctly on touch screens.
+- Mouse and trackpad users have a visible Settings button at the top right of the dashboard.
+- Reconnect to Home Assistant after returning from sleep or the background, and recover sockets that stop answering. The night clock wakes when returning to the app.
+- Existing licenses, pairings, layouts and photos are preserved. Update the add-on or standalone container, then reload each display.
+
 ## 0.6.3
 - The dunes clock face is now called **Sandbot**. If you already added it, it stays where it is under its new name.
 - Tap the face and Sandbot rolls out again with his next routine. Double-tap to turn his sounds on or off (one tap used to do that).
